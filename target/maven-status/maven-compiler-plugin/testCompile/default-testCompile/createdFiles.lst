@@ -1,0 +1,10 @@
+com/kazale/pontointeligente/api/controllers/LancamentoControllerTest.class
+com/kazale/pontointeligente/api/controllers/EmpresaControllerTest.class
+com/kazale/pontointeligente/api/repositories/LancamentoRepositoryTest.class
+com/kazale/pontointeligente/api/services/LancamentoServiceTest.class
+com/kazale/pontointeligente/api/PontoInteligenteApplicationTests.class
+com/kazale/pontointeligente/api/repositories/EmpresaRepositoryTest.class
+com/kazale/pontointeligente/api/services/EmpresaServiceTest.class
+com/kazale/pontointeligente/api/repositories/FuncionarioRepositoryTest.class
+com/kazale/pontointeligente/api/utils/PasswordUtilsTest.class
+com/kazale/pontointeligente/api/services/FuncionarioServiceTest.class

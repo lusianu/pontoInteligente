@@ -1,0 +1,10 @@
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/PontoInteligenteApplicationTests.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/services/FuncionarioServiceTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/controllers/LancamentoControllerTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/services/EmpresaServiceTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/services/LancamentoServiceTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/controllers/EmpresaControllerTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/repositories/LancamentoRepositoryTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/repositories/EmpresaRepositoryTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/repositories/FuncionarioRepositoryTest.java
+/home/luciano/Documentos/PontoInteligente/src/test/java/com/kazale/pontointeligente/api/utils/PasswordUtilsTest.java

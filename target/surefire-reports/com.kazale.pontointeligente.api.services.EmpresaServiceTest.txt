@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.kazale.pontointeligente.api.services.EmpresaServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.896 sec - in com.kazale.pontointeligente.api.services.EmpresaServiceTest
