@@ -6,6 +6,7 @@ import java.util.List;
 public class Response<T> {
 
 	private T data;
+	private boolean sucesso;
 	private List<String> errors;
 
 	public Response() {
@@ -30,4 +31,11 @@ public class Response<T> {
 		this.errors = errors;
 	}
 
+	public boolean isSucesso() {
+		return sucesso;
+	}
+
+	public void setSucesso(boolean sucesso) {
+		this.sucesso = sucesso;
+	}
 }

@@ -11,6 +11,7 @@ public class FuncionarioDto {
 	private Long id;
 	private String nome;
 	private String email;
+	private String cpf;
 	private Optional<String> senha = Optional.empty();
 	private Optional<String> valorHora = Optional.empty();
 	private Optional<String> qtdHorasTrabalhoDia = Optional.empty();
@@ -80,9 +81,19 @@ public class FuncionarioDto {
 		this.qtdHorasAlmoco = qtdHorasAlmoco;
 	}
 
+	@NotEmpty(message = "CPF não pode ser vazio.")
+	@Length(min = 11, max = 11, message = "CPF deve conter 11 caracteres.")
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	@Override
 	public String toString() {
-		return "FuncionarioDto [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", valorHora="
+		return "FuncionarioDto [id=" + id + ", nome=" + nome + ", CPF="+cpf+", email=" + email + ", senha=" + senha + ", valorHora="
 				+ valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia + ", qtdHorasAlmoco=" + qtdHorasAlmoco
 				+ "]";
 	}

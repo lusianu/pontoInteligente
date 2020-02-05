@@ -6,18 +6,15 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import com.kazale.pontointeligente.api.dtos.EmpresaDto;
+import com.kazale.pontointeligente.api.entities.Empresa;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.kazale.pontointeligente.api.dtos.FuncionarioDto;
 import com.kazale.pontointeligente.api.entities.Funcionario;
@@ -117,6 +114,7 @@ public class FuncionarioController {
 		funcionarioDto.setId(funcionario.getId());
 		funcionarioDto.setEmail(funcionario.getEmail());
 		funcionarioDto.setNome(funcionario.getNome());
+		funcionarioDto.setCpf(funcionario.getCpf());
 		funcionario.getQtdHorasAlmocoOpt().ifPresent(
 				qtdHorasAlmoco -> funcionarioDto.setQtdHorasAlmoco(Optional.of(Float.toString(qtdHorasAlmoco))));
 		funcionario.getQtdHorasTrabalhoDiaOpt().ifPresent(
@@ -125,6 +123,24 @@ public class FuncionarioController {
 				.ifPresent(valorHora -> funcionarioDto.setValorHora(Optional.of(valorHora.toString())));
 
 		return funcionarioDto;
+	}
+
+	@GetMapping(value = "/cpf/{cpf}")
+	public ResponseEntity<Response<FuncionarioDto>> buscarPorCpf(@PathVariable("cpf") String cpf) {
+		log.info("Buscando funcionario por CPF: {}", cpf);
+		Response<FuncionarioDto> response = new Response<FuncionarioDto>();
+		Optional<Funcionario> funcionario = funcionarioService.buscarPorCpf(cpf);
+
+		if (!funcionario.isPresent()) {
+			log.info("Funcionario não encontrada para o CPF: {}", cpf);
+			response.getErrors().add("Funcionario não encontrada para o CPF " + cpf);
+			response.setSucesso(false);
+			return ResponseEntity.ok(response);
+		}
+
+		response.setData(this.converterFuncionarioDto(funcionario.get()));
+		response.setSucesso(true);
+		return ResponseEntity.ok(response);
 	}
 
 }
